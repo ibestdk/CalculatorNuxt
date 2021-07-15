@@ -1,3 +1,5 @@
+
+/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -11,11 +13,34 @@ body{
     margin-right: 5%;
     font-family: 'Prompt', sans-serif;
     background-color: lightblue;
-}
-
-.calculator{
+  }
+  
+  
+  .calculator{
     margin-top: 3%;
-}
+  }
+  .display{
+      padding-right: 5%;
+      padding-top: 1%;
+      text-align:right;
+      height: 150px;
+      width: 100%;
+      grid-column:  1/5;
+      background-color: rgb(184, 184, 184);
+      text-align: right center;
+      color: white;
+      font-weight: 600;
+      font-size: 5em;
+      border-radius: 10px;
+      font-family: 'Press Start 2P', cursive;
+  }
+  
+
+
+
+/* =====================ส่วนของปุ่ม================ */
+
+
 .cal_body{
     padding: 5%;
     border-radius: 20px;
@@ -37,24 +62,8 @@ body{
     -o-user-drag: none;
 }
 
-.display{
-    padding-right: 5%;
-    padding-top: 1%;
-    text-align:right;
-    height: 150px;
-    width: 100%;
-    grid-column:  1/5;
-    background-color: rgb(184, 184, 184);
-    text-align: right center;
-    color: white;
-    font-weight: 600;
-    font-size: 5em;
-    border-radius: 10px;
-    font-family: 'Press Start 2P', cursive;
-}
-  
-  
-  
+
+
   .btnc{
     margin: auto;
     background-color: rgb(255, 255, 255);
@@ -72,8 +81,8 @@ body{
     
 }
 
-  
-   .clear{
+
+  .clear{
     background-color: rgb(236, 62, 120);
     border: 1px solid rgb(226, 226, 226);
     padding:0 ;
@@ -87,7 +96,6 @@ body{
   .clear:hover{
     background-color: rgb(148, 50, 83);
     border: 1px solid rgb(226, 226, 226);
-
   } 
   
   .delete{
@@ -111,38 +119,3 @@ body{
   }
 
 
-  @media only screen and (max-width: 1024px) {
-    body {
-      background-color: lightblue;
-      margin-top: 60px;
-    }
-    .display{
-        padding-top: 5%;
-        height: 200px;
-    }
-    .btnc{
-        font-size: 70px;
-    }
-    .clear,.delete{
-        font-size: 50px;
-    }
-    
-  }
-
-  @media only screen and (max-width: 414px) {
-    body {
-    margin-top: 50px;
-    background-color: lightblue;
-    }
-    .display{
-        padding-top: 5%;
-        height: 100px;
-        font-size: 2.5em;
-    }
-    .btnc{
-        font-size: 40px;
-    }
-    .clear,.delete{
-        font-size: 25px;
-    }
-  }

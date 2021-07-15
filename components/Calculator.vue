@@ -1,4 +1,4 @@
- <template>
+<template>
 
 <div class="calculator">
     <div class="display">{{showDisplay}}</div>
@@ -26,6 +26,9 @@
 </div>
 </template>
 
+
+
+
 <script>
 export default {
 data(){
@@ -37,47 +40,48 @@ operatorClicked: false,
     }
 },
 methods:{
-    clear(){
-    his.showDisplay = '' ;
+    
+    clear(){    // ฟังก์ชั่นเคลียร์
+    this.showDisplay = '' ;
     },
-    append(nummber){
+    append(nummber){ //ฟังก์ชั่นเพิ่มตัวเลข
     if (this.operatorClicked){
         this.showDisplay = '';
         this.operatorClicked = false;
     }
     this.showDisplay = `${this.showDisplay}${nummber}`
     },
-    dot(){
+    dot(){  //ฟังก์ชั่นเกี่ยวกับการใส่ทศนิยม
     if(this.showDisplay.indexOf('.') === -1){
         this.append('.');
     }
     },
 
-    setPrenum(){
+    setPrenum(){  //เซตค่าก่อนหน้า เเละ เปลี่ยนสถานะของเครื่องหมาย
     this.previous = this.showDisplay;
     this.operatorClicked = true;
     },
-    plus(){
+    plus(){ //ฟังก์ชั่นบวก
     this.operator = (a,b) => a + b;
     this.setPrenum();
     },
-    minus(){
+    minus(){ //ฟังก์ชั่นลบ
     this.operator = (a,b) => b - a;
     this.setPrenum();
     },
-    multiply(){
+    multiply(){ //ฟังชั่นคูณ
       this.operator = (a,b) => a * b;
     this.setPrenum();
     },
-    divide(){
+    divide(){       //ฟังก์ชั่นหาร
     this.operator = (a, b) => b / a;
     this.setPrenum();
     },
-    equal(){
+    equal(){      //ฟังก์ชั่นรวมเลข
     this.showDisplay = `${this.operator(parseFloat(this.showDisplay), parseFloat(this.previous))}`;
     this.previous = null;
     },
-    del(){
+    del(){      //ฟังก์ชั่น backspace
 this.showDisplay = this.showDisplay.substring(0,this.showDisplay.length-1);
 },
 }
