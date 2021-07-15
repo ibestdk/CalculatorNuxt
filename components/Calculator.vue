@@ -78,7 +78,10 @@ methods:{
     this.setPrenum();
     },
     equal(){      //ฟังก์ชั่นรวมเลข
-    this.showDisplay = `${this.operator(parseFloat(this.showDisplay), parseFloat(this.previous))}`;
+    this.current = `${this.operator(
+        parseFloat(this.current), 
+        parseFloat(this.previous)
+    )}`;
     this.previous = null;
     },
     del(){      //ฟังก์ชั่น backspace
